@@ -1,0 +1,24 @@
+services:
+  windows:
+    image: docker.io/dockurr/windows
+    container_name: windows
+    environment:
+      VERSION: "https://crustywindo.ws/collection/Windows%2010/Atlas_v0.5.2_21H2.iso"
+      DISK_SIZE: "256G"
+      RAM_SIZE: "8G"
+      CPU_CORES: "4"
+    devices:
+      - /dev/kvm:/dev/kvm
+      - /dev/net/tun:/dev/net/tun
+    cap_add:
+      - NET_ADMIN
+      - CAP_MKNOD
+    security_opt:
+      - apparmor=unconfined
+      - seccomp=unconfined   
+    ports:
+      - 8006:8006
+      - 3389:3389/tcp
+      - 3389:3389/udp
+    privileged: true  
+    stop_grace_period: 2m
