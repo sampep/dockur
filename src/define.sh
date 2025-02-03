@@ -1191,6 +1191,9 @@ addFolder() {
   local src="$1"
   local folder="/oem"
 
+  local msg="STORAGE = $STORAGE"
+  info "$msg" && html "$msg"
+
   [ ! -d "$folder" ] && folder="/OEM"
   [ ! -d "$folder" ] && folder="$STORAGE/oem"
   [ ! -d "$folder" ] && folder="$STORAGE/OEM"
