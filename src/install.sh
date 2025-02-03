@@ -7,6 +7,9 @@ FB="falling back to manual installation!"
 ETFS="boot/etfsboot.com"
 EFISYS="efi/microsoft/boot/efisys_noprompt.bin"
 
+local msg="STORAGE = $STORAGE"
+info "$msg" && html "$msg"
+
 skipInstall() {
 
   local iso="$1"
