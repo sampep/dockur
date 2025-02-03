@@ -105,6 +105,9 @@ startInstall() {
 
 finishInstall() {
 
+  local msg="STORAGE = $STORAGE"
+  info "$msg" && html "$msg"
+
   local iso="$1"
   local aborted="$2"
   local base byte
